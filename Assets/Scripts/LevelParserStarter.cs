@@ -25,6 +25,11 @@ public class LevelParserStarter : MonoBehaviour
     }
     public void reset()
     {
+        foreach (GameObject mobObj in GameObject.FindGameObjectsWithTag("Bullet"))
+        {
+            if (mobObj.name!="Bullet")
+                Destroy(mobObj);
+        }
         lc = mc = tc = 0;
         guiSc.lockWin = false;
         RefreshParse();
